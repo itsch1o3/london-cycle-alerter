@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
+navigator.serviceWorker.register('service-worker.js')
 root.render(
   <React.StrictMode>
     <App />
@@ -17,4 +17,3 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-navigator.serviceWorker.register('service-worker.js')
