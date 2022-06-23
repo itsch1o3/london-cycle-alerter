@@ -27,7 +27,7 @@ class StationSelector extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.stations != this.props.stations && this.state.selected_station != null){
+        if (prevProps.stations !== this.props.stations && this.state.selected_station != null){
             this.setState({ "selected_station": this.props.stations.find(element => element.id === this.state.selected_station.id)});
         }
     }

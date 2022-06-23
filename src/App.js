@@ -4,7 +4,9 @@ import 'leaflet/dist/leaflet.css';
 import {StationSelector} from "./components/stationSelector";
 
 
+
 class App extends React.Component {
+    
     constructor(props) {
         super(props);
         this.state = {stations: new Map()}
@@ -54,9 +56,18 @@ class App extends React.Component {
 
     render() {
         return (
+            <div style={{margin: "auto", textAlign: "center"}}>
+            <h1>Cycle Hire Tracker</h1>
+            <p>Select a dock from the dropdown below to view information on availability; and enable notifications for when all docks are full or empty.<br/>
+              You can also use the provided map to view availability in the area surrounding the dock, so you can reroute accordingly!<br/>
+            <i>Note: This web app is client-side, and relies only on accessing TFL data.<br/> The APIs available for notifications in browsers are limited; and none exist to update in the background regularly without a server "pushing" the notifications.<br/>
+                As a result, notifications on mobile platforms can be unreliable if the webpage is in the background, and the app will only work while open - sorry!</i><br/>
+            </p>
+            
             <div className="App">
                 <StationSelector stations={this.state.stations}/>
                 </div>
+            </div>
         );
     }
 }

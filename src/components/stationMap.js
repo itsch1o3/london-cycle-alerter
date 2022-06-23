@@ -43,11 +43,11 @@ class StationMap extends React.Component {
 
     componentDidUpdate(prevProps) {
         if(this.state.station != null && this.props.station != null){
-        if (this.state.station.id != this.props.station.id){
+        if (this.state.station.id !== this.props.station.id){
             this.setState({"station": this.props.station})
             this.mapRef.current.setView(this.props.station.loc, 17)
         }}
-        if(prevProps.stations != this.props.stations){
+        if(prevProps.stations !== this.props.stations){
             this.setState({"markers": this.generateStationMarkers(this.props.stations)})
         }
     }
@@ -57,9 +57,9 @@ class StationMap extends React.Component {
         let markers = [];
         for(let istation of this.props.stations){
             let icon = this.bike_icon
-            if(istation.bikeCount == 0){
+            if(istation.bikeCount === 0){
                 icon = this.bike_none_icon
-            } else if(istation.emptyDockCount == 0){
+            } else if(istation.emptyDockCount === 0){
                 icon = this.dock_none_icon
             } else if(istation.emptyDockCount / istation.bikeCount <= 0.2) {
                 icon = this.dock_low_icon
