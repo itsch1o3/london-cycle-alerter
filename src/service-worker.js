@@ -10,3 +10,5 @@
 import { clientsClaim } from 'workbox-core';
 
 clientsClaim();
+
+var manifest = self.__WB_MANIFEST;
